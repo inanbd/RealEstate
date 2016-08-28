@@ -1,18 +1,51 @@
 package models;
 
-import java.sql.Date;
 
 public class Office {
 	private int officeId;
 	private String officeTitle;
-	private String officeLocation;
 	private double sizeInSqFeet;
 	private String floor;
 	private double price;
 	private String category;
 	private String officeDescription;
-	private Date date;
+	//private Date date;
 	private String username;
+	private String city;
+	private String area;
+	private String address;
+	private String offertype;
+	
+	
+	
+	public String getCity() {
+		return city;
+	}
+	public String getArea() {
+		return area;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public String getOffertype() {
+		return offertype;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public void setArea(String area) {
+		this.area = area;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public void setOffertype(String offertype) {
+		this.offertype = offertype;
+	}
+	
+	
+	
+	
 	
 	
 	public String getUsername() {
@@ -29,9 +62,6 @@ public class Office {
 	public String getOfficeTitle() {
 		return officeTitle;
 	}
-	public String getOfficeLocation() {
-		return officeLocation;
-	}
 	public double getSizeInSqFeet() {
 		return sizeInSqFeet;
 	}
@@ -47,17 +77,14 @@ public class Office {
 	public String getOfficeDescription() {
 		return officeDescription;
 	}
-	public Date getDate() {
+/*	public Date getDate() {
 		return date;
-	}
+	}*/
 	public void setOfficeId(int officeId) {
 		this.officeId = officeId;
 	}
 	public void setOfficeTitle(String officeTitle) {
 		this.officeTitle = officeTitle;
-	}
-	public void setOfficeLocation(String officeLocation) {
-		this.officeLocation = officeLocation;
 	}
 	public void setSizeInSqFeet(double sizeInSqFeet) {
 		this.sizeInSqFeet = sizeInSqFeet;
@@ -74,10 +101,11 @@ public class Office {
 	public void setOfficeDescription(String officeDescription) {
 		this.officeDescription = officeDescription;
 	}
+	/*
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	
+	*/
 
 	
 }

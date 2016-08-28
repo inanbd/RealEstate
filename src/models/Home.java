@@ -13,8 +13,41 @@ public class Home {
 	private String floor;
 	private String homeDescription;
 	private String category;
-	private Date date;
+	//private Date date;
 	private String username;
+	
+	
+	private String city;
+	private String area;
+	private String address;
+	private String offertype;
+	public String getCity() {
+		return city;
+	}
+	public String getArea() {
+		return area;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public String getOffertype() {
+		return offertype;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public void setArea(String area) {
+		this.area = area;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public void setOffertype(String offertype) {
+		this.offertype = offertype;
+	}
+	
+	
+	
 	
 	
 	public String getUsername() {
@@ -23,12 +56,12 @@ public class Home {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public Date getDate() {
+/*	public Date getDate() {
 		return date;
 	}
 	public void setDate(Date date) {
 		this.date = date;
-	}
+	}*/
 	public int getHomeId() {
 		return homeId;
 	}

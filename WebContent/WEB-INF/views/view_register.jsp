@@ -16,6 +16,7 @@
 			<h2>Signup</h2>
 			<form method="post" name="signup_form"  onsubmit="return validate();">
 				<ul>
+					<li>${Message}</li>
 					<li>
 						<input type="text" class="username" name="username" id="username" placeholder="Username" onblur="unVerify()"/>
 					</li>
@@ -24,18 +25,18 @@
 					</li>
 					
 					<li>
-						<input type="text" class="firstname" name="firstname" id="firstname" placeholder="Firstname" onblur="fnVerify()"/>
+						<input type="text" class="firstname" name="firstname" id="firstname" placeholder="Name" onblur="fnVerify()"/>
 					</li>
 					<li>
 						<label id="err_firstname">a</label>
 					</li>
-					
+					<!-- 
 					<li>
 						<input type="text" class="lastname" name="lastname" id="lastname" placeholder="Lastname" onblur="lnVerify()"/>
 					</li>
 					<li>
 						<label id="err_lastname">a</label>
-					</li>
+					</li>  -->
 					
 					<li>
 						<input type="text" class="email" name="email" id="email" placeholder="Email" onblur="emailVerify()"/>
@@ -52,6 +53,14 @@
 					</li>
 					
 					<li>
+						<input type="text" class="contactnumber" name="contactnumber" id="contactnumber" placeholder="Contact Number" onblur="cnVerify()"/>
+					</li>
+					<li>
+						<label id="err_contactnumber">a</label>
+					</li>
+					
+					
+					<li>
 						<input type="password" class="password" name="password" id="password" placeholder="Password" onblur="psVerify()"/>
 					</li>
 					<li>
@@ -65,11 +74,13 @@
 						<label id="err_conpassword">a</label>
 					</li>
 					
+					
 					<li>
 						<input type="checkbox" class="checkbox" name="checkbox" id="checkbox"/><span>I agree with the <a href="#">terms and conditions.</a></span>
 						<br>
 						<label id="err_checkbox">a</label>
 					</li>
+					
 					
 					<li>
 						<input type="submit" class="signup" value="Signup" />

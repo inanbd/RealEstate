@@ -5,8 +5,8 @@ public class User {
 	private String username;
 	private String password;
 	private int type;
-	private String firstname;
-	private String lastname;
+	private String name;
+	//private String lastname;
 	private String address;
 	private String email;
 	private String contactnumber;
@@ -34,18 +34,20 @@ public class User {
 	public void setType(int type) {
 		this.type = type;
 	}
-	public String getFirstname() {
-		return firstname;
+	public String getName() {
+		return name;
 	}
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setName(String firstname) {
+		this.name = firstname;
 	}
+	/*
 	public String getLastname() {
 		return lastname;
 	}
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
-	}
+	}*/
+	
 	public String getAddress() {
 		return address;
 	}

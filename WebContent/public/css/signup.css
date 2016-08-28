@@ -36,7 +36,7 @@ a{
 	text-decoration: none;
 }
 
-.username,.firstname,.lastname,.email,.address,.password,.conpassword{
+.username,.firstname,.lastname,.email,.address,.password,.conpassword,.contactnumber{
 	height: 25px;
 	width: 200px;
 	background:white;
@@ -46,7 +46,7 @@ a{
    color:#273746;
 }
 
-#err_username,#err_firstname,#err_lastname,#err_email,#err_address,#err_password,#err_conpassword{
+#err_username,#err_firstname,#err_contactnumber,#err_lastname,#err_email,#err_address,#err_password,#err_conpassword{
 	color:#154360;
 }
 

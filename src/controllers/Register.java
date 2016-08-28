@@ -61,12 +61,12 @@ public class Register extends HttpServlet {
 		String username=request.getParameter("username");
 		String password=request.getParameter("password");
 		String firstname=request.getParameter("firstname");
-		String lastname=request.getParameter("lastname");
+		//String lastname=request.getParameter("lastname");
 		String email=request.getParameter("email");
 		String address = request.getParameter("address");
-		String contact=request.getParameter("contact");
+		String contact=request.getParameter("contactnumber");
 		
-		if(username==null||password==null||firstname == null ||lastname == null||email==null||address==null){
+		if(username==null||password==null||firstname == null /*||lastname == null*/||email==null||address==null){
 			err="All fields are required";
 			request.setAttribute("errors", err);
 			RequestDispatcher disp = request.getRequestDispatcher("/WEB-INF/views/view_register.jsp");
@@ -76,8 +76,8 @@ public class Register extends HttpServlet {
 			
 		}
 		
-		user.setFirstname(firstname);
-		user.setLastname(lastname);
+		user.setName(firstname);
+		//user.setLastname(lastname);
 		user.setAddress(address);
 		user.setContactnumber(contact);
 		user.setEmail(email);
@@ -87,7 +87,10 @@ public class Register extends HttpServlet {
 		UserAdapter ua= new UserAdapter();
 		ua.insert(user);
 		
-		response.sendRedirect("./home");
+		request.setAttribute("Message", "User Registered Successfully");
+		
+		RequestDispatcher disp = request.getRequestDispatcher("/WEB-INF/views/view_register.jsp");
+		disp.forward(request, response);
 		
 	}
 

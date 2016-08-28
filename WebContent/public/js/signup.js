@@ -7,7 +7,8 @@ function validateEmail(email) {
 function validate(){
 				var un=document.forms["signup_form"]["username"]; 
 				var fn=document.forms["signup_form"]["firstname"];
-				var ln=document.forms["signup_form"]["lastname"];
+				//var ln=document.forms["signup_form"]["lastname"];
+				var cn=document.forms["signup_form"]["contactnumber"];
 				var email=document.forms["signup_form"]["email"];
 				var add=document.forms["signup_form"]["address"];
 				var ps=document.forms["signup_form"]["password"];
@@ -18,7 +19,8 @@ function validate(){
 				
 				var un_error=document.getElementById("err_username");
 				var fn_error=document.getElementById("err_firstname");
-				var ln_error=document.getElementById("err_lastname");
+				//var ln_error=document.getElementById("err_lastname");
+				var cn_error=document.getElementById("err_contactnumber");
 				var email_error=document.getElementById("err_email");
 				var add_error=document.getElementById("err_address");
 				var ps_error=document.getElementById("err_password");
@@ -41,18 +43,26 @@ function validate(){
 				}
 				
 				if (fn.value==null || fn.value==""){
-					fn_error.innerHTML="Firstname required";
+					fn_error.innerHTML="Name required";
 					fn_error.style.color='red';	
 					//return false;
 					check =0;
 				}
-				
+				/*
 				if (ln.value==null || ln.value==""){
 					ln_error.innerHTML="Lastname required";
 					ln_error.style.color='red';	
 					//return false;
 					check =0;
+				}*/
+				
+				if (cn.value==null || cn.value==""){
+					cn_error.innerHTML="Contact Number required";
+					cn_error.style.color='red';	
+					//return false;
+					check =0;
 				}
+				
 				if (email.value==null || email.value==""){
 					email_error.innerHTML="Email required";
 					email_error.style.color='red';	
@@ -100,14 +110,14 @@ function validate(){
 			}//validate funtion only checks if any field is empty or not
 	
 	function unVerify(){
-														// ai level e kono return dorkar nai..
+// ai level e kono return dorkar nai..
 		
 		var un_input=document.getElementById("username").value;		
 		var un_error=document.getElementById("err_username");
 		
 		if(un_input!=""){
-			if(un_input.length<6){
-				un_error.innerHTML="Username must contain 6 letters";
+			if(un_input.length<5){
+				un_error.innerHTML="Username must contain 5 letters";
 				un_error.style.color='red';	
 			}
 			else un_error.innerHTML="";
@@ -116,7 +126,9 @@ function validate(){
 			un_error.innerHTML="Username required";
 			un_error.style.color='red';	
 		}
+			
 	}
+
 	
 	function fnVerify(){ //
 		var fn=document.getElementById("firstname");
@@ -194,6 +206,18 @@ function validate(){
 		}
 	}
 	
+	function cnVerify(){
+		var cn=document.getElementById("contactnumber");
+		var cn_error=document.getElementById("err_contactnumber");
+		if(cn.value!=""){
+			cn_error.innerHTML="";
+		}
+		else{
+			cn_error.innerHTML="Contact Number required";  
+			cn_error.style.color='red';	
+		}
+	}
+	
 	function conpsVerify(){
 		
 		var ps_input=document.getElementById("password").value;
@@ -210,8 +234,8 @@ function validate(){
 		
 		}
 		else{
-			conps_error.innerHTML="Password required";  
-			un_error.style.color='red';	
+			conps_error.innerHTML="Confirm password required";  
+			conps_error.style.color='red';	
 		}
 	}
 	

@@ -9,14 +9,14 @@ public class UserAdapter {
 
 	public void insert(User usr)
 	{
-		String sql = "INSERT INTO Users VALUES (null,'"+usr.getUsername()+"','"+usr.getPassword()+"','2','"+usr.getFirstname()+"','"+usr.getLastname()+"','"+usr.getAddress()+"','"+usr.getEmail()+"','"+usr.getContactnumber()+"')";
+		String sql = "INSERT INTO Users VALUES (null,'"+usr.getUsername()+"','"+usr.getPassword()+"','2','"+usr.getName()+"', 'null' ,'"+usr.getAddress()+"','"+usr.getEmail()+"','"+usr.getContactnumber()+"')";
 		DataAccess da = new DataAccess();
 		da.executeQuery(sql);
 	}
 	
 	public void update(User usr)
 	{
-		String sql = "UPDATE Users SET username = '"+usr.getUsername()+"', password = '"+usr.getPassword()+"', firstname = '"+usr.getFirstname()+"', lastname = '"+usr.getLastname()+"', address = '"+usr.getAddress()+"', email = '"+usr.getEmail()+"', contactnumber '"+usr.getContactnumber()+"')";
+		String sql = "UPDATE Users SET username = '"+usr.getUsername()+"', password = '"+usr.getPassword()+"', firstname = '"+usr.getName()+"', address = '"+usr.getAddress()+"', email = '"+usr.getEmail()+"', contactnumber '"+usr.getContactnumber()+"'WHERE id ='"+usr.getId()+"'";
 		DataAccess da = new DataAccess();
 		da.executeQuery(sql);
 	}
@@ -44,8 +44,8 @@ public class UserAdapter {
 			{
 				User usr = new User();
 				usr.setId(rs.getInt("id"));
-				usr.setFirstname(rs.getString("firstname"));
-				usr.setLastname(rs.getString("lastname"));
+				usr.setName(rs.getString("name"));
+				//usr.setLastname(rs.getString("lastname"));
 				usr.setEmail(rs.getString("email"));
 				usr.setType(rs.getInt("type"));
 				usr.setAddress(rs.getString("address"));
@@ -73,8 +73,8 @@ public class UserAdapter {
 			if(rs.next())
 			{
 				usr.setId(rs.getInt("id"));
-				usr.setFirstname(rs.getString("firstname"));
-				usr.setLastname(rs.getString("lastname"));
+				usr.setName(rs.getString("name"));
+				//usr.setLastname(rs.getString("lastname"));
 				usr.setEmail(rs.getString("email"));
 				usr.setType(rs.getInt("type"));
 				usr.setAddress(rs.getString("address"));
@@ -105,8 +105,8 @@ public class UserAdapter {
 			if(rs.next())
 			{
 				user.setId(rs.getInt("id"));
-				user.setFirstname(rs.getString("firstname"));
-				user.setLastname(rs.getString("lastname"));
+				user.setName(rs.getString("name"));
+				//user.setLastname(rs.getString("lastname"));
 				user.setEmail(rs.getString("email"));
 				user.setType(rs.getInt("type"));
 				user.setAddress(rs.getString("address"));

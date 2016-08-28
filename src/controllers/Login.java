@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+
 import adapters.*;
 import models.*;
 import Cookies.*;
@@ -52,7 +53,11 @@ public class Login extends HttpServlet {
 			RequestDispatcher disp = request.getRequestDispatcher("/WEB-INF/views/view_login.jsp");
 			disp.forward(request, response);
 		}else{
-			response.sendRedirect("/RealEstate/home");
+			if(user.getType() == 1){
+				response.sendRedirect("/RealEstate/AdminHome");
+			}else if(user.getType()==2){
+				response.sendRedirect("/RealEstate/CustomerHome");
+			}
 		}
 	}
 
@@ -103,7 +108,13 @@ public class Login extends HttpServlet {
 			err = "";
 			HttpSession session = request.getSession();
 			session.setAttribute("currentUser", user);
-			response.sendRedirect("/RealEstate/home");
+			if(user.getType() == 1){
+				response.sendRedirect("/RealEstate/AdminHome");
+			}else if(user.getType()==2){
+				response.sendRedirect("/RealEstate/CustomerHome");
+			}
+			
+			
 		}
 		
 		

@@ -9,33 +9,33 @@ public class LandAdapter {
 	
 	public void insert(Land land)
 	{
-		String sql = "INSERT INTO Lands VALUES (null,'"+land.getLandTitle()+"','"+land.getLandLocation()+"','"+land.getTotalKatha()+"','"+land.getPricePerKatha()+"','"+land.getLandDescription()+"','"+land.getCategory()+"','"+land.getDate()+"','"+land.getUsername()+"')";
+		String sql = "INSERT INTO land VALUES (null,'"+land.getLandTitle()+"','"+land.getTotalKatha()+"','"+land.getPricePerKatha()+"','"+land.getLandDescription()+"','"+land.getCategory()+"','"+land.getUsername()+"','"+land.getCity()+"','"+land.getArea()+"','"+land.getAddress()+"','"+land.getOffertype()+"')";
 		DataAccess da = new DataAccess();
 		da.executeQuery(sql);
 	}
 	
 	public void update(Land land)
 	{
-		String sql = "UPDATE Lands SET landTitle = '"+land.getLandTitle()+"', landLocation = '"+land.getLandLocation()+"', totalKatha = '"+land.getTotalKatha()+"', pricePerKatha = '"+land.getPricePerKatha()+"', landDescription = '"+land.getLandDescription()+"', category = '"+land.getCategory()+"', username = '"+land.getUsername()+"', date = '"+land.getDate()+"')";
+		String sql = "UPDATE land SET landTitle = '"+land.getLandTitle()+"', totalKatha = '"+land.getTotalKatha()+"', pricePerKatha = '"+land.getPricePerKatha()+"', landDescription = '"+land.getLandDescription()+"', category = '"+land.getCategory()+"', username = '"+land.getUsername()+"', city = '"+land.getCity()+"', area = '"+land.getArea()+"', address = '"+land.getAddress()+"', offertype = '"+land.getOffertype()+"' WHERE  landId = '"+land.getLandId()+"'";
 		DataAccess da = new DataAccess();
 		da.executeQuery(sql);
 	}
 	public void delete(int id)
 	{
-		String sql = "DELETE FROM Lands WHERE id="+id;
+		String sql = "DELETE FROM land WHERE landId="+id;
 		DataAccess da = new DataAccess();
 		da.executeQuery(sql);
 	}
 	public void delete(Land land)
 	{
-		String sql = "DELETE FROM Users WHERE id="+land.getLandId();
+		String sql = "DELETE FROM land WHERE landId="+land.getLandId();
 		DataAccess da = new DataAccess();
 		da.executeQuery(sql);
 	}
 	
 	public ArrayList<Land> getAll()
 	{
-		String sql = "SELECT * FROM Users";
+		String sql = "SELECT * FROM land";
 		DataAccess da = new DataAccess();
 		ResultSet rs = da.getResultSet(sql);
 		ArrayList<Land> landlist = new ArrayList<Land>();
@@ -45,14 +45,19 @@ public class LandAdapter {
 				Land land = new Land();
 				land.setLandId(rs.getInt("landId"));
 				land.setLandTitle(rs.getString("landTitle"));
-				land.setLandLocation(rs.getString("landLocation"));
-				land.setTotalKatha(rs.getDouble("totalKatha"));
+				
+				land.setTotalKatha(rs.getDouble("totalkatha"));
 				land.setPricePerKatha(rs.getDouble("pricePerKatha"));
 				land.setLandDescription(rs.getString("landDescription"));
 				land.setCategory(rs.getString("category"));
-				land.setDate(rs.getDate("date"));
+				//land.setDate(rs.getDate("dateposted"));
 				land.setUsername(rs.getString("username"));
 				
+				land.setCity(rs.getString("city"));
+				land.setCity(rs.getString("area"));
+				land.setCity(rs.getString("address"));
+				land.setCity(rs.getString("offertype"));
+
 				landlist.add(land);
 			}
 			return landlist;
@@ -63,9 +68,9 @@ public class LandAdapter {
 		}
 	}
 	
-	public Land get(int id)
+	public Land getSingle(int id)
 	{
-		String sql = "SELECT * FROM Users WHERE id="+id;
+		String sql = "SELECT * FROM land WHERE id="+id;
 		DataAccess da = new DataAccess();
 		ResultSet rs = da.getResultSet(sql);
 		Land land = new Land();
@@ -74,13 +79,17 @@ public class LandAdapter {
 			{
 				land.setLandId(rs.getInt("landId"));
 				land.setLandTitle(rs.getString("landTitle"));
-				land.setLandLocation(rs.getString("landLocation"));
-				land.setTotalKatha(rs.getDouble("totalKatha"));
+				land.setTotalKatha(rs.getDouble("totalkatha"));
 				land.setPricePerKatha(rs.getDouble("pricePerKatha"));
 				land.setLandDescription(rs.getString("landDescription"));
 				land.setCategory(rs.getString("category"));
-				land.setDate(rs.getDate("date"));
+				//land.setDate(rs.getDate("dateposted"));
 				land.setUsername(rs.getString("username"));
+				
+				land.setCity(rs.getString("city"));
+				land.setCity(rs.getString("area"));
+				land.setCity(rs.getString("address"));
+				land.setCity(rs.getString("offertype"));
 				
 				
 				return land;

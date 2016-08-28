@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<title>Login</title>
-		<link rel="stylesheet" href="/RealEstate/css/login.css"/>
+		<link rel="stylesheet" href="/RealEstate/public/css/login.css"/>
 		<script type="text/javascript">	
 		
 			//validation function
