@@ -6,10 +6,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Add New Office</title>
+<title>Add New Land</title>
 </head>
 <body>
-	<h2>Add new Office</h2>
+	<h2>Add new Land</h2>
 	${Message}
 	<table>
 		<form method="post">
@@ -19,11 +19,11 @@
 				<td><input type="text" name="title" id="title" /></td>
 			</tr>
 			<tr>
-				<td>Office Size:</td>
-				<td><input type="text" name="size" id="size" /></td>
+				<td>Katha:</td>
+				<td><input type="text" name="katha" id="katha" /></td>
 			</tr>
 			<tr>
-				<td>Price:</td>
+				<td>Price per Katha:</td>
 				<td><input type="text" name="price" id="price" /></td>
 			</tr>
 			<!-- 
@@ -32,14 +32,7 @@
 				<td><input type="text" name="category" id="category" /></td>
 			</tr>
 			 --> 
-			<tr>
-				<td>Floor:</td>
-				<td><select name = "floor">
-					<c:forEach  var="s" items="${floors}">
-						<option>${s}</option>
-					</c:forEach>	
-				</select></td>
-			</tr>
+			
 			<tr>
 				<td>Description: </td>
 				<td><input type="text" name="description" id="description" /></td>
@@ -68,6 +61,11 @@
 			</tr>
 			
 			<tr>
+				<td>Address: </td>
+				<td><input type="text" name="address" id="address" /></td>
+			</tr>
+			
+			<tr>
 				<td>For: </td>
 				<td>
 				<select name="offer">
@@ -79,11 +77,17 @@
 				</td>
 			</tr>
 			
-			<tr>
-				<td>Address: </td>
-				<td><input type="text" name="address" id="address" /></td>
-			</tr>
 			
+			
+		<!-- 	<tr>
+				<td>Floor:</td>
+				<td><select name = "floor">
+					<c:forEach  var="s" items="${floors}">
+						<option>${s}</option>
+					</c:forEach>	
+				</select></td>
+			</tr>
+			 -->
 			<tr>
 				<td></td>
 				<td><input type="submit"  value="Add"/></td>

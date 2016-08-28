@@ -6,7 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import java.util.Date;
 /**
  * Servlet implementation class AccessDenied
  */
@@ -27,7 +27,11 @@ public class AccessDenied extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Access Denied ");
+		//response.getWriter().append("Access Denied ");
+		Date date = new Date();
+		
+		response.getWriter().println(date.getYear());
+		//response.getWriter().println(request.getServletContext().getRealPath("/"));
 	}
 
 	/**

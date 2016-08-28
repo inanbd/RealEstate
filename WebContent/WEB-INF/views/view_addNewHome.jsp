@@ -19,11 +19,11 @@
 				<td><input type="text" name="title" id="title" /></td>
 			</tr>
 			<tr>
-				<td>Office Size:</td>
+				<td>Size:</td>
 				<td><input type="text" name="size" id="size" /></td>
 			</tr>
 			<tr>
-				<td>Price:</td>
+				<td>Price Per sq Foot:</td>
 				<td><input type="text" name="price" id="price" /></td>
 			</tr>
 			<!-- 

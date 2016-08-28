@@ -24,6 +24,13 @@ public class AddNewOffice extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		
+		String []floors ={"Ground Floor","1st Floor","2nd Floor","3rd Floor","4th Floor","5th Floor"};
+		
+		request.setAttribute("floors", floors);
+		Office office  = new Office();
+		
+		
 		CityAdapter ca = new CityAdapter();
 		AreaAdapter aa = new AreaAdapter();
 		OfferAdapter oa = new OfferAdapter();
@@ -41,6 +48,10 @@ public class AddNewOffice extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
+		
+		String []floors ={"Ground Floor","1st Floor","2nd Floor","3rd Floor","4th Floor","5th Floor"};
+		
+		request.setAttribute("floors", floors);
 		Office office  = new Office();
 		
 		String title = request.getParameter("title");
